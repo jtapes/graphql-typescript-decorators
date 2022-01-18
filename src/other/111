@@ -1,0 +1,44 @@
+5
+mutation Login {
+  login(password: "asd", email: "asd")
+}
+
+subscription R {
+  loginSub
+}
+
+
+mutation D {
+  addDog(data: {name: "new dog"}) {
+        ...on ErrorMessage {
+      message
+    }
+
+    ...on Dog {
+      id
+    }
+  }
+}
+
+query S {
+  asa {
+    ...on ErrorMessage {
+      message
+    }
+
+    ...on Dog {
+      id
+    }
+  }
+}
+
+query test {
+  dogs {
+    id,
+    name,
+    dogsType,
+    childIds {
+      id
+    }
+  }
+}
